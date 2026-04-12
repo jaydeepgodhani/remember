@@ -1,11 +1,16 @@
 import { NextFunction, Request, Response } from "express";
 import { CustomError, RespBody } from "../utils/types";
 
-const errorHandler = (err: CustomError, req: Request, res: Response, next: NextFunction) => {
+const errorHandler = (
+  err: CustomError,
+  req: Request,
+  res: Response,
+  next: NextFunction,
+) => {
   console.error("Global error handler caught:", err);
 
   const statusCode: number = err.status || 500;
-  const message = err.message || "Internal Server Error";
+  const message: string = err.message || "Internal Server Error";
 
   const response: RespBody = {
     success: false,
