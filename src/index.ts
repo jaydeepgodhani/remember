@@ -25,13 +25,13 @@ app.post("/signup", (req: Request, res: Response, next: NextFunction) => {
       status: 400,
       message: 'Username and/or password can not be null',
     }
-    next(err);
+    return next(err);
   }
   // save into DB
-  res.status(200).send("User has succesfully signup");
+  return res.status(200).send("User has succesfully signup");
 });
 
-const whatisit = await supabase.from("users").select();
+const whatisit = await supabase.from("user").select();
 console.log("what ? ", whatisit);
 
 app.use(errorHandler);
