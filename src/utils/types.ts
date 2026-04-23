@@ -1,5 +1,9 @@
 export interface AuthReq {
   username: string;
+}
+
+export interface LoginReq {
+  username: string;
   password: string;
 }
 
