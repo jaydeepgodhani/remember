@@ -1,5 +1,5 @@
-export interface UpdateReq {
-  username: string;
+export interface UpdateNoteReq {
+  userId: number;
   noteId: number;
   increase: boolean;
 }
@@ -14,11 +14,27 @@ export interface UpdateRes {
   user: { id: number; password: string; username: string };
 }
 
-export interface AuthReq {
-  username: string;
+export interface CreateNoteReq {
+  userId: number;
+  content: string;
+  tags: string[];
 }
 
-export interface NotesRes {
+export interface CreateNoteRes {
+  data: {
+    id: number;
+    content: string;
+    tags: string[];
+  }[];
+  status: number;
+  statusText: string;
+}
+
+export interface AuthReq {
+  userId: number;
+}
+
+export interface GetNotesRes {
   userId: number;
   noteId: number;
   currentInterval: number;
