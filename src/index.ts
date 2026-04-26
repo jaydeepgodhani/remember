@@ -1,7 +1,7 @@
-import "dotenv/config";
+import "./env.js";
 import express, { NextFunction, Request, Response } from "express";
-import errorHandler from "./middleware/errorHandler";
-import { supabase } from "./utils/supabase";
+import errorHandler from "./middleware/errorHandler.js";
+import { supabase } from "./utils/supabase.js";
 import {
   CustomError,
   RespBody,
@@ -12,10 +12,10 @@ import {
   GetNotesRes,
   CreateNoteReq,
   CreateNoteRes,
-} from "./utils/types";
+} from "./utils/types.js";
 import { log, timeLog } from "console";
 import { addHours } from "date-fns";
-import { timers } from "./utils/constants";
+import { timers } from "./utils/constants.js";
 import { PostgrestError } from "@supabase/supabase-js";
 import cors from "cors";
 

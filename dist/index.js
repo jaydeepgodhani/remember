@@ -1,10 +1,10 @@
-import "dotenv/config";
+import "./env.js";
 import express from "express";
-import errorHandler from "./middleware/errorHandler";
-import { supabase } from "./utils/supabase";
+import errorHandler from "./middleware/errorHandler.js";
+import { supabase } from "./utils/supabase.js";
 import { log } from "console";
 import { addHours } from "date-fns";
-import { timers } from "./utils/constants";
+import { timers } from "./utils/constants.js";
 import cors from "cors";
 console.log("Hello World!");
 console.log(process.env.NODE_ENV);
