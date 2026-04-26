@@ -25,7 +25,12 @@ console.log(process.env.NODE_ENV);
 // Create an Express app
 const app = express();
 app.use(express.json());
-app.use(cors());
+app.use(
+  cors({
+    origin: "http://localhost:3011",
+    credentials: true,
+  }),
+);
 
 // Define a test route for the server
 app.get("/", (req: Request, res: Response) => {
